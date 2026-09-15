@@ -52,7 +52,7 @@ export function Header() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-3.5 lg:px-10">
         <a
           href="#inicio"
-          className="flex min-w-0 items-center"
+          className="inline-flex min-w-0 items-center rounded-xs bg-white px-3 py-1.5 shadow-xs transition-opacity hover:opacity-95"
           aria-label="CVA Advogados & Consultores — início"
         >
           <img
@@ -60,7 +60,7 @@ export function Header() {
             alt="Logótipo CVA Advogados & Consultores"
             width={320}
             height={80}
-            className="h-9 w-auto shrink-0 object-contain sm:h-10"
+            className="h-8 w-auto shrink-0 object-contain sm:h-9"
           />
         </a>
 

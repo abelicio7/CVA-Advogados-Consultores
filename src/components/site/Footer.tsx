@@ -8,14 +8,16 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <img
-              src="/cva-logo.png"
-              alt="Logótipo CVA Advogados & Consultores"
-              width={320}
-              height={80}
-              loading="lazy"
-              className="h-10 w-auto brightness-0 invert"
-            />
+            <div className="inline-block rounded-xs bg-white px-3.5 py-2 shadow-xs">
+              <img
+                src="/cva-logo.png"
+                alt="Logótipo CVA Advogados & Consultores"
+                width={320}
+                height={80}
+                loading="lazy"
+                className="h-9 w-auto object-contain"
+              />
+            </div>
             <p className="mt-6 font-display text-xl text-ink-foreground/85">
               Excelência jurídica. Confiança. Compromisso.
             </p>
