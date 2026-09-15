@@ -43,13 +43,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled || open
-          ? "border-b border-hairline/70 bg-background/85 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent",
+          ? "border-b border-hairline/80 bg-background/95 backdrop-blur-md"
+          : "border-b border-white/10 bg-ink/30 backdrop-blur-xs",
       )}
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-4 lg:px-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-3.5 lg:px-10">
         <a
           href="#inicio"
           className="flex min-w-0 items-center"
@@ -60,10 +60,7 @@ export function Header() {
             alt="Logótipo CVA Advogados & Consultores"
             width={320}
             height={80}
-            className={cn(
-              "h-9 w-auto shrink-0 transition-all duration-500 sm:h-10",
-              scrolled || open ? "" : "brightness-0 invert",
-            )}
+            className="h-9 w-auto shrink-0 object-contain sm:h-10"
           />
         </a>
 
@@ -76,8 +73,8 @@ export function Header() {
               className={cn(
                 "nav-underline text-[0.8125rem] font-medium tracking-wide transition-colors",
                 scrolled
-                  ? "text-foreground/75 hover:text-foreground"
-                  : "text-ink-foreground/80 hover:text-ink-foreground",
+                  ? "text-foreground/80 hover:text-foreground"
+                  : "text-ink-foreground/90 hover:text-ink-foreground",
               )}
             >
               {item.label}
