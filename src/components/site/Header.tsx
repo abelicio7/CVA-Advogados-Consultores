@@ -1,7 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import logo from "@/assets/cva-logo.png.asset.json";
 import { NAV_ITEMS } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -57,7 +56,7 @@ export function Header() {
           aria-label="CVA Advogados & Consultores — início"
         >
           <img
-            src={logo.url}
+            src="/cva-logo.png"
             alt="Logótipo CVA Advogados & Consultores"
             width={320}
             height={80}

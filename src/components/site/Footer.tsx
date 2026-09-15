@@ -1,4 +1,3 @@
-import logo from "@/assets/cva-logo.png.asset.json";
 import { EMAIL, NAV_ITEMS } from "@/data/site";
 
 export function Footer() {
@@ -10,7 +9,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <img
-              src={logo.url}
+              src="/cva-logo.png"
               alt="Logótipo CVA Advogados & Consultores"
               width={320}
               height={80}

@@ -1,4 +1,3 @@
-import office from "@/assets/office-detail.jpg";
 import { LOCAIS } from "@/data/site";
 import { Reveal } from "./Reveal";
 
@@ -47,7 +46,7 @@ export function Sobre() {
         <Reveal className="lg:col-span-5" delay={120}>
           <figure className="relative">
             <img
-              src={office}
+              src="/office-detail.jpg"
               alt="Detalhe do interior de um escritório jurídico contemporâneo com estantes de obras legais"
               width={1200}
               height={1400}

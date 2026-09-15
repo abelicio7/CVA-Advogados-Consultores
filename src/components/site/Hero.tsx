@@ -1,13 +1,12 @@
 import { ArrowDown } from "lucide-react";
 
-import hero from "@/assets/hero-architecture.jpg";
 import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
     <section id="inicio" className="relative isolate flex min-h-[92vh] items-end overflow-hidden">
       <img
-        src={hero}
+        src="/hero-architecture.jpg"
         alt="Fachada de edifício corporativo contemporâneo em linhas verticais"
         width={1920}
         height={1280}
