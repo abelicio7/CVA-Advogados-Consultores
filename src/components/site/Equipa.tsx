@@ -12,12 +12,27 @@ export function Equipa() {
           </h2>
           <p className="mt-6 text-[0.975rem] leading-relaxed text-muted-foreground">
             Uma equipa de profissionais preparada para responder às necessidades jurídicas dos
-            nossos clientes com rigor técnico e compromisso.
+            nossos clientes com rigor técnico, proximidade e compromisso.
           </p>
         </Reveal>
 
+        {/* Foto de Família / Grupo da Equipa */}
+        <Reveal className="mt-12 overflow-hidden border border-hairline bg-card">
+          <figure className="relative">
+            <img
+              src="/equipa/equipa-cva.jpg"
+              alt="Fotografia de grupo da equipa de advogados da CVA Advogados & Consultores"
+              loading="lazy"
+              className="h-auto max-h-[560px] w-full object-cover object-center"
+            />
+            <figcaption className="border-t border-hairline bg-background/95 px-6 py-4 text-sm text-muted-foreground sm:px-8">
+              A equipa jurídica da CVA Advogados &amp; Consultores reunida nas suas instalações.
+            </figcaption>
+          </figure>
+        </Reveal>
+
         {/* Sócios */}
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 lg:grid-cols-3">
           {SOCIOS.map((s) => (
             <Reveal
               key={s.nome}
