@@ -72,7 +72,7 @@ export function Presenca() {
             </ul>
           </Reveal>
 
-          <Reveal className="order-1 lg:order-2 lg:col-span-5" delay={100}>
+          <Reveal className="order-1 lg:order-2 lg:col-span-5">
             <div className="relative mx-auto max-w-xs">
               <svg
                 viewBox="0 0 80 190"

@@ -34,7 +34,7 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#contactos"
-              className="inline-flex h-12 items-center justify-center bg-primary px-7 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-lift"
+              className="inline-flex h-12 items-center justify-center bg-primary px-7 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:bg-primary/90"
             >
               Falar com a CVA
             </a>
@@ -52,7 +52,7 @@ export function Hero() {
           aria-label="Continuar para Sobre Nós"
           className="mt-16 inline-flex items-center gap-3 text-[0.6875rem] uppercase tracking-[0.22em] text-ink-foreground/55 transition-colors hover:text-ink-foreground"
         >
-          <ArrowDown className="h-4 w-4 animate-bounce" aria-hidden />
+          <ArrowDown className="h-4 w-4" aria-hidden />
           Continuar
         </a>
       </div>

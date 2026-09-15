@@ -26,7 +26,7 @@ export function Servicos() {
           {SERVICOS.map((s, i) => {
             const expandido = aberto === s.id;
             return (
-              <Reveal key={s.id} delay={Math.min(i * 40, 240)}>
+              <Reveal key={s.id}>
                 <div className="border-b border-hairline">
                   <h3>
                     <button

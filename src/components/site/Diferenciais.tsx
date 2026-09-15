@@ -26,8 +26,7 @@ export function Diferenciais() {
             return (
               <Reveal
                 key={d.titulo}
-                delay={Math.min(i * 70, 280)}
-                className="group bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft lg:p-10"
+                className="group bg-background p-8 transition-colors duration-200 hover:bg-surface/40 lg:p-10"
               >
                 <Icon className="h-5 w-5 text-primary" aria-hidden />
                 <h3 className="mt-6 font-display text-2xl text-foreground">{d.titulo}</h3>
