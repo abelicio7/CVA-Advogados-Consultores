@@ -183,10 +183,20 @@ export const DIFERENCIAIS = [
   },
 ] as const;
 
-export const SOCIOS = [
+export type Socio = {
+  nome: string;
+  cargo: string;
+  foto: string;
+  iniciais: string;
+  carteira: string;
+  pontos: string[];
+};
+
+export const SOCIOS: Socio[] = [
   {
     nome: "Dr. Celso Diogo Mendonça",
-    cargo: "Sócio-Fundador",
+    cargo: "Sócio Gerente da Sociedade",
+    foto: "/equipa/celso-diogo.jpg",
     iniciais: "CM",
     carteira: "n.º 736",
     pontos: [
@@ -199,7 +209,8 @@ export const SOCIOS = [
   },
   {
     nome: "Dr. José Tambara João Cipriano",
-    cargo: "Sócio",
+    cargo: "Sócio e Administrador da Sucursal de Tete",
+    foto: "/equipa/jose-cipriano.jpg",
     iniciais: "JC",
     carteira: "n.º 1782",
     pontos: [
@@ -211,9 +222,10 @@ export const SOCIOS = [
     ],
   },
   {
-    nome: "Dr. Elísio Verniz Dauce",
-    cargo: "Sócio",
-    iniciais: "ED",
+    nome: "Dr. Elísio Verniz Dauce (Saúde)",
+    cargo: "Sócio e Administrador do Escritório de Lichinga",
+    foto: "/equipa/elisio-saude.jpg",
+    iniciais: "ES",
     carteira: "n.º 2116",
     pontos: [
       "Advogado com 6 anos de experiência.",
@@ -222,14 +234,26 @@ export const SOCIOS = [
       "Presidiu o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
     ],
   },
-] as const;
+];
 
-export const ASSOCIADOS = [
+export type Associado = {
+  nome: string;
+  carteira: string;
+  foto?: string;
+  cargo?: string;
+};
+
+export const ASSOCIADOS: Associado[] = [
+  {
+    nome: "Delton Dias Fevereiro",
+    cargo: "Advogado Associado",
+    foto: "/equipa/delton-fevereiro.jpg",
+    carteira: "Carteira profissional n.º 3239",
+  },
   { nome: "Áurio Agnaldo Gilberto Cochelane", carteira: "Carteira profissional n.º 3215" },
-  { nome: "Delton Dias Fevereiro", carteira: "Carteira profissional n.º 3239" },
   { nome: "João Bilai Tambo Júnior", carteira: "Carteira profissional n.º 3619" },
   { nome: "Alfredo Chicuele", carteira: "Recém-inscrito, ainda sem número de carteira atribuído" },
-] as const;
+];
 
 export type Local = {
   id: string;

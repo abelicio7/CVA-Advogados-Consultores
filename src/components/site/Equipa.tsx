@@ -12,50 +12,71 @@ export function Equipa() {
           </h2>
           <p className="mt-6 text-[0.975rem] leading-relaxed text-muted-foreground">
             Uma equipa de profissionais preparada para responder às necessidades jurídicas dos
-            nossos clientes.
+            nossos clientes com rigor técnico e compromisso.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-px bg-hairline lg:grid-cols-3">
-          {SOCIOS.map((s, i) => (
+        {/* Sócios */}
+        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+          {SOCIOS.map((s) => (
             <Reveal
               key={s.nome}
-              delay={i * 90}
               as="article"
-              className="group flex flex-col bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft lg:p-10"
+              className="flex flex-col overflow-hidden border border-hairline bg-card transition-all duration-300 hover:border-primary/40"
             >
-              <div
-                aria-hidden
-                className="flex h-16 w-16 items-center justify-center border border-hairline font-display text-xl text-primary transition-colors duration-300 group-hover:border-primary"
-              >
-                {s.iniciais}
+              <div className="relative aspect-[4/4.2] w-full overflow-hidden bg-muted">
+                <img
+                  src={s.foto}
+                  alt={s.nome}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-102"
+                />
               </div>
-              <h3 className="mt-7 font-display text-2xl leading-snug text-foreground">{s.nome}</h3>
-              <p className="eyebrow mt-2 text-primary">{s.cargo}</p>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Carteira profissional {s.carteira}
-              </p>
-              <ul className="mt-5 space-y-3 text-[0.925rem] leading-relaxed text-muted-foreground">
-                {s.pontos.map((p) => (
-                  <li key={p} className="flex gap-3">
-                    <span aria-hidden className="mt-2.5 h-px w-3.5 shrink-0 bg-primary" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-1 flex-col p-7 lg:p-8">
+                <h3 className="font-display text-2xl leading-snug text-foreground">{s.nome}</h3>
+                <p className="eyebrow mt-2 text-primary">{s.cargo}</p>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Carteira profissional {s.carteira}
+                </p>
+                <ul className="mt-5 space-y-2.5 border-t border-hairline pt-5 text-[0.925rem] leading-relaxed text-muted-foreground">
+                  {s.pontos.map((p) => (
+                    <li key={p} className="flex gap-3">
+                      <span aria-hidden className="mt-2.5 h-px w-3.5 shrink-0 bg-primary" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           ))}
         </div>
 
+        {/* Advogados Associados */}
         <Reveal className="mt-20">
           <h3 className="font-display text-2xl text-foreground sm:text-3xl">
             Advogados Associados
           </h3>
-          <div className="mt-8 grid gap-px border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {ASSOCIADOS.map((a) => (
-              <div key={a.nome} className="bg-background p-6">
-                <p className="font-display text-lg leading-snug text-foreground">{a.nome}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.carteira}</p>
+              <div
+                key={a.nome}
+                className="flex flex-col overflow-hidden border border-hairline bg-card"
+              >
+                {a.foto ? (
+                  <div className="relative aspect-[4/4.2] w-full overflow-hidden bg-muted">
+                    <img
+                      src={a.foto}
+                      alt={a.nome}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top"
+                    />
+                  </div>
+                ) : null}
+                <div className="p-6">
+                  <p className="font-display text-lg leading-snug text-foreground">{a.nome}</p>
+                  {a.cargo ? <p className="eyebrow mt-1.5 text-primary">{a.cargo}</p> : null}
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{a.carteira}</p>
+                </div>
               </div>
             ))}
           </div>
