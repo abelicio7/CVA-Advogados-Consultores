@@ -11,7 +11,7 @@ export const NAV_ITEMS = [
 export const STATS = [
   { value: 2012, suffix: "", label: "Ano de constituição da firma" },
   { value: 3, suffix: "", label: "Cidades com representação" },
-  { value: 4, suffix: "", label: "Advogados sócios" },
+  { value: 3, suffix: "", label: "Advogados sócios" },
   { value: null, suffix: "+", label: "Equipa jurídica multidisciplinar" },
 ] as const;
 
