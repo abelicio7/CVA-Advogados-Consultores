@@ -288,7 +288,7 @@ export const LOCAIS: Local[] = [
   {
     id: "maputo",
     cidade: "Maputo",
-    tipo: "Representação",
+    tipo: "Sucursal",
     morada: "Bairro da Sommerschield, Edifício 41 Business Centre",
     x: 40,
     y: 90,

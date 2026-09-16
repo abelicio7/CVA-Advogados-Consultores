@@ -102,7 +102,7 @@ export function Contacto() {
                   </div>
                 ) : (
                   <div className="mt-6 border-t border-hairline pt-4 text-xs text-muted-foreground">
-                    Representação Institucional
+                    Sucursal Institucional
                   </div>
                 )}
               </div>

@@ -54,7 +54,7 @@ export function Sobre() {
               className="h-full w-full object-cover"
             />
             <figcaption className="mt-4 border-l border-primary pl-4 text-sm leading-relaxed text-muted-foreground">
-              Constituída em 2012, com sede em Lichinga e representação em Tete e Maputo.
+              Constituída em 2012, com sede em Lichinga e sucursais em Tete e Maputo.
             </figcaption>
           </figure>
         </Reveal>

@@ -20,8 +20,8 @@ export function Presenca() {
             Onde estamos
           </h2>
           <p className="mt-6 text-[0.975rem] leading-relaxed text-muted-foreground">
-            Representação em três cidades de Moçambique, com proximidade e acompanhamento contínuo
-            aos nossos clientes.
+            Presença estratégica em três cidades de Moçambique, com sede em Lichinga e sucursais
+            em Tete e Maputo.
           </p>
         </Reveal>
 
