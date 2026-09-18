@@ -222,7 +222,7 @@ export const SOCIOS: Socio[] = [
   },
   {
     nome: "Dr. Celso Diogo Mendonça",
-    cargo: "Sócio Gerente da Sociedade",
+    cargo: "Sócio Fundador da Sociedade",
     foto: "/equipa/celso-diogo.jpg",
     iniciais: "CM",
     carteira: "n.º 736",
