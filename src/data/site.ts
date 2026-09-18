@@ -210,7 +210,7 @@ export const SOCIOS: Socio[] = [
   {
     nome: "Dr. Elísio Verniz Dauce",
     cargo: "Sócio e Administrador do Escritório de Lichinga",
-    foto: "/equipa/elisio-saude.jpg",
+    foto: "/equipa/elisio-dauce.jpg",
     iniciais: "ED",
     carteira: "n.º 2116",
     pontos: [
