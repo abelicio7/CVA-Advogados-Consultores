@@ -1,13 +1,17 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
+import { AdminModal } from "@/components/site/AdminModal";
 import { Contacto } from "@/components/site/Contacto";
 import { Diferenciais } from "@/components/site/Diferenciais";
 import { Equipa } from "@/components/site/Equipa";
 import { Footer } from "@/components/site/Footer";
+import { Galeria } from "@/components/site/Galeria";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Orientacao } from "@/components/site/Orientacao";
 import { Presenca } from "@/components/site/Presenca";
+import { Publicacoes } from "@/components/site/Publicacoes";
 import { Servicos } from "@/components/site/Servicos";
 import { Sobre } from "@/components/site/Sobre";
 import { Stats } from "@/components/site/Stats";
@@ -69,6 +73,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [adminOpen, setAdminOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -78,12 +84,22 @@ function Index() {
         <Sobre />
         <Orientacao />
         <Servicos />
+        <Publicacoes />
+        <Galeria />
         <Diferenciais />
         <Equipa />
         <Presenca />
         <Contacto />
       </main>
-      <Footer />
+      <Footer onOpenAdmin={() => setAdminOpen(true)} />
+
+      <AdminModal
+        isOpen={adminOpen}
+        onClose={() => setAdminOpen(false)}
+        onSuccess={() => {
+          // Re-render components when items change
+        }}
+      />
     </div>
   );
 }

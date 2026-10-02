@@ -1,6 +1,8 @@
-import { EMAIL, NAV_ITEMS } from "@/data/site";
+interface FooterProps {
+  onOpenAdmin?: () => void;
+}
 
-export function Footer() {
+export function Footer({ onOpenAdmin }: FooterProps) {
   const ano = new Date().getFullYear();
 
   return (
@@ -48,11 +50,30 @@ export function Footer() {
               {EMAIL}
             </a>
             <p className="mt-4 text-sm text-ink-foreground/60">Lichinga · Tete · Maputo</p>
+            
+            {onOpenAdmin && (
+              <button
+                type="button"
+                onClick={onOpenAdmin}
+                className="mt-6 inline-flex items-center gap-1.5 rounded-xs border border-ink-foreground/20 px-3 py-1.5 text-xs text-ink-foreground/70 hover:border-ink-foreground/50 hover:text-ink-foreground transition-colors"
+              >
+                🔒 Área Reservada / Publicar
+              </button>
+            )}
           </div>
         </div>
 
-        <div className="mt-14 border-t border-ink-foreground/15 pt-6 text-xs text-ink-foreground/50">
-          © {ano} CVA Advogados &amp; Consultores. Todos os direitos reservados.
+        <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-ink-foreground/15 pt-6 text-xs text-ink-foreground/50">
+          <div>© {ano} CVA Advogados &amp; Consultores. Todos os direitos reservados.</div>
+          {onOpenAdmin && (
+            <button
+              type="button"
+              onClick={onOpenAdmin}
+              className="text-left sm:text-right text-xs text-ink-foreground/40 hover:text-ink-foreground/80 transition-colors"
+            >
+              Painel de Gestão de Leis & Galeria
+            </button>
+          )}
         </div>
       </div>
     </footer>

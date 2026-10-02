@@ -2,6 +2,8 @@ export const NAV_ITEMS = [
   { id: "inicio", label: "Início" },
   { id: "sobre", label: "Sobre Nós" },
   { id: "servicos", label: "Serviços" },
+  { id: "publicacoes", label: "Publicações & Leis" },
+  { id: "galeria", label: "Galeria" },
   { id: "equipa", label: "Equipa" },
   { id: "diferenciais", label: "Diferenciais" },
   { id: "presenca", label: "Presença" },
