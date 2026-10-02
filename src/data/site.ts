@@ -194,6 +194,20 @@ export type Socio = {
 
 export const SOCIOS: Socio[] = [
   {
+    nome: "Dr. Celso Diogo Mendonça",
+    cargo: "Advogado e Árbitro",
+    foto: "/equipa/celso-diogo.jpg",
+    iniciais: "CM",
+    carteira: "n.º 736",
+    pontos: [
+      "Advogado com mais de 15 anos de experiência.",
+      "Árbitro.",
+      "Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
+      "Presidiu o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado do Conselho Provincial da OAM – Niassa de 2020 a 2023.",
+      "Fluente em Português e Inglês.",
+    ],
+  },
+  {
     nome: "Dr. José Tambara João Cipriano",
     cargo: "Sócio e Administrador da Sucursal de Tete",
     foto: "/equipa/jose-cipriano.jpg",
@@ -218,20 +232,6 @@ export const SOCIOS: Socio[] = [
       "Árbitro.",
       "Vice-Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
       "Presidiu o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
-    ],
-  },
-  {
-    nome: "Dr. Celso Diogo Mendonça",
-    cargo: "Sócio Fundador da Sociedade",
-    foto: "/equipa/celso-diogo.jpg",
-    iniciais: "CM",
-    carteira: "n.º 736",
-    pontos: [
-      "Advogado com mais de 15 anos de experiência.",
-      "Árbitro.",
-      "Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
-      "Presidiu o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado do Conselho Provincial da OAM – Niassa de 2020 a 2023.",
-      "Fluente em Português e Inglês.",
     ],
   },
 ];
