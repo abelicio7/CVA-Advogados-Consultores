@@ -84,6 +84,28 @@ export const INITIAL_GALERIA: GaleriaItem[] = [
 const LOCAL_STORAGE_PUB_KEY = "cva_publicacoes_data";
 const LOCAL_STORAGE_GAL_KEY = "cva_galeria_data";
 
+// SSR-safe localStorage helpers
+function getStoredLocalData(key: string): string | null {
+  if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      console.warn("Error reading localStorage:", e);
+    }
+  }
+  return null;
+}
+
+function setStoredLocalData(key: string, value: string): void {
+  if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      console.warn("Error writing localStorage:", e);
+    }
+  }
+}
+
 // Helper functions for Publicações
 export async function getPublicacoes(): Promise<Publicacao[]> {
   if (isSupabaseConfigured && supabase) {
@@ -109,7 +131,7 @@ export async function getPublicacoes(): Promise<Publicacao[]> {
     }
   }
 
-  const stored = localStorage.getItem(LOCAL_STORAGE_PUB_KEY);
+  const stored = getStoredLocalData(LOCAL_STORAGE_PUB_KEY);
   if (stored) {
     try {
       return JSON.parse(stored);
@@ -117,7 +139,7 @@ export async function getPublicacoes(): Promise<Publicacao[]> {
       console.error(e);
     }
   }
-  localStorage.setItem(LOCAL_STORAGE_PUB_KEY, JSON.stringify(INITIAL_PUBLICACOES));
+  setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(INITIAL_PUBLICACOES));
   return INITIAL_PUBLICACOES;
 }
 
@@ -154,7 +176,7 @@ export async function addPublicacao(pub: Omit<Publicacao, "id">): Promise<Public
 
   const current = await getPublicacoes();
   const updated = [newPub, ...current];
-  localStorage.setItem(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updated));
+  setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updated));
   return newPub;
 }
 
@@ -169,7 +191,7 @@ export async function deletePublicacao(id: string): Promise<void> {
 
   const current = await getPublicacoes();
   const updated = current.filter((p) => p.id !== id);
-  localStorage.setItem(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updated));
+  setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updated));
 }
 
 // Helper functions for Galeria
@@ -196,7 +218,7 @@ export async function getGaleria(): Promise<GaleriaItem[]> {
     }
   }
 
-  const stored = localStorage.getItem(LOCAL_STORAGE_GAL_KEY);
+  const stored = getStoredLocalData(LOCAL_STORAGE_GAL_KEY);
   if (stored) {
     try {
       return JSON.parse(stored);
@@ -204,7 +226,7 @@ export async function getGaleria(): Promise<GaleriaItem[]> {
       console.error(e);
     }
   }
-  localStorage.setItem(LOCAL_STORAGE_GAL_KEY, JSON.stringify(INITIAL_GALERIA));
+  setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(INITIAL_GALERIA));
   return INITIAL_GALERIA;
 }
 
@@ -240,7 +262,7 @@ export async function addGaleriaItem(item: Omit<GaleriaItem, "id">): Promise<Gal
 
   const current = await getGaleria();
   const updated = [newItem, ...current];
-  localStorage.setItem(LOCAL_STORAGE_GAL_KEY, JSON.stringify(updated));
+  setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(updated));
   return newItem;
 }
 
@@ -255,5 +277,5 @@ export async function deleteGaleriaItem(id: string): Promise<void> {
 
   const current = await getGaleria();
   const updated = current.filter((g) => g.id !== id);
-  localStorage.setItem(LOCAL_STORAGE_GAL_KEY, JSON.stringify(updated));
+  setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(updated));
 }
