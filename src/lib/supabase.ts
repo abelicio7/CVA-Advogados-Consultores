@@ -57,10 +57,10 @@ export const INITIAL_PUBLICACOES: Publicacao[] = [
 export const INITIAL_GALERIA: GaleriaItem[] = [
   {
     id: "gal-1",
-    titulo: "Equipa CVA Advogados & Consultores",
-    descricao: "Fotografia institucional conjunta da equipa jurídica do escritório.",
-    imagemUrl: "/equipa/equipa-cva.jpg",
-    categoria: "Equipa",
+    titulo: "Sede CVA Business Centre — Lichinga",
+    descricao: "Instalações corporativas contemporâneas preparadas para atendimento ao cliente com total privacidade e conforto.",
+    imagemUrl: "/hero-architecture.jpg",
+    categoria: "Instalações",
     data: "2026",
   },
   {
@@ -71,18 +71,10 @@ export const INITIAL_GALERIA: GaleriaItem[] = [
     categoria: "Instalações",
     data: "2026",
   },
-  {
-    id: "gal-3",
-    titulo: "Sede CVA Business Centre",
-    descricao: "Estrutura corporativa contemporânea onde se coordenam as operações e sucursais.",
-    imagemUrl: "/hero-architecture.jpg",
-    categoria: "Instalações",
-    data: "2026",
-  },
 ];
 
 const LOCAL_STORAGE_PUB_KEY = "cva_publicacoes_data";
-const LOCAL_STORAGE_GAL_KEY = "cva_galeria_data";
+const LOCAL_STORAGE_GAL_KEY = "cva_galeria_data_v3";
 
 // SSR-safe localStorage helpers
 function getStoredLocalData(key: string): string | null {
@@ -218,14 +210,32 @@ export async function getGaleria(): Promise<GaleriaItem[]> {
     }
   }
 
-  const partnerPhotos = ["jose-cipriano", "celso-diogo", "elisio-dauce", "elisio-saude", "delton-fevereiro"];
-  const isPartnerPhoto = (url: string) => partnerPhotos.some((name) => url.includes(name));
+  // Cleanup legacy cached keys containing team photos
+  if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+    try {
+      localStorage.removeItem("cva_galeria_data");
+      localStorage.removeItem("cva_galeria_data_v2");
+    } catch {
+      // ignore
+    }
+  }
+
+  const teamAndPartnerPhotos = [
+    "equipa",
+    "jose-cipriano",
+    "celso-diogo",
+    "elisio-dauce",
+    "elisio-saude",
+    "delton-fevereiro",
+  ];
+  const isTeamOrPartnerPhoto = (url: string) =>
+    teamAndPartnerPhotos.some((name) => url.toLowerCase().includes(name));
 
   const stored = getStoredLocalData(LOCAL_STORAGE_GAL_KEY);
   if (stored) {
     try {
       const parsed: GaleriaItem[] = JSON.parse(stored);
-      const cleaned = parsed.filter((item) => !isPartnerPhoto(item.imagemUrl));
+      const cleaned = parsed.filter((item) => !isTeamOrPartnerPhoto(item.imagemUrl));
       if (cleaned.length !== parsed.length) {
         setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(cleaned));
       }

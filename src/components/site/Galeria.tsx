@@ -21,7 +21,7 @@ export function Galeria() {
     setLoading(false);
   };
 
-  const categorias = ["Todas", "Instalações", "Eventos", "Equipa", "Atividades"];
+  const categorias = ["Todas", "Instalações", "Eventos", "Atividades"];
 
   const itemsFiltrados = items.filter((item) =>
     categoriaAtiva === "Todas" ? true : item.categoria === categoriaAtiva
