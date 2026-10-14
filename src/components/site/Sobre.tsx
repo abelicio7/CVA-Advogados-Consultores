@@ -43,18 +43,23 @@ export function Sobre() {
           </dl>
         </Reveal>
 
-        <Reveal className="lg:col-span-5" delay={120}>
-          <figure className="relative">
-            <img
-              src="/office-detail.jpg"
-              alt="Detalhe do interior de um escritório jurídico contemporâneo com estantes de obras legais"
-              width={1200}
-              height={1400}
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-            <figcaption className="mt-4 border-l border-primary pl-4 text-sm leading-relaxed text-muted-foreground">
-              Constituída em 2012, com sede em Lichinga e sucursais em Tete e Maputo.
+        <Reveal className="lg:col-span-5 flex flex-col justify-center" delay={120}>
+          <figure className="relative overflow-hidden border border-hairline bg-card shadow-sm">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+              <img
+                src="/socios-cva.jpg"
+                alt="Sócios da CVA Advogados & Consultores"
+                width={1280}
+                height={853}
+                loading="lazy"
+                className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-102"
+              />
+            </div>
+            <figcaption className="p-5 border-t border-hairline bg-card">
+              <p className="font-display text-lg text-foreground">Sócios da Sociedade</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Liderança da CVA Advogados &amp; Consultores com representação em Lichinga, Tete e Maputo.
+              </p>
             </figcaption>
           </figure>
         </Reveal>
