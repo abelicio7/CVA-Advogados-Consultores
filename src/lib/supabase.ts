@@ -204,6 +204,37 @@ export async function deletePublicacao(id: string): Promise<void> {
   setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updated));
 }
 
+export async function updatePublicacao(
+  id: string,
+  updates: Partial<Omit<Publicacao, "id">>
+): Promise<Publicacao | null> {
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const dbUpdates: Record<string, unknown> = {};
+      if (updates.titulo !== undefined) dbUpdates.titulo = updates.titulo;
+      if (updates.resumo !== undefined) dbUpdates.resumo = updates.resumo;
+      if (updates.conteudo !== undefined) dbUpdates.conteudo = updates.conteudo;
+      if (updates.categoria !== undefined) dbUpdates.categoria = updates.categoria;
+      if (updates.pdfUrl !== undefined) dbUpdates.pdf_url = updates.pdfUrl;
+      if (updates.imagemUrl !== undefined) dbUpdates.imagem_url = updates.imagemUrl;
+      if (updates.data !== undefined) dbUpdates.data = updates.data;
+
+      await supabase.from("publicacoes").update(dbUpdates).eq("id", id);
+    } catch (e) {
+      console.error("Supabase update error:", e);
+    }
+  }
+
+  const current = await getPublicacoes();
+  const index = current.findIndex((p) => p.id === id);
+  if (index === -1) return null;
+
+  const updatedItem: Publicacao = { ...current[index], ...updates };
+  const updatedList = sortPublicacoesDesc(current.map((p) => (p.id === id ? updatedItem : p)));
+  setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updatedList));
+  return updatedItem;
+}
+
 // Helper functions for Galeria
 export async function getGaleria(): Promise<GaleriaItem[]> {
   if (isSupabaseConfigured && supabase) {
@@ -314,4 +345,33 @@ export async function deleteGaleriaItem(id: string): Promise<void> {
   const current = await getGaleria();
   const updated = current.filter((g) => g.id !== id);
   setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(updated));
+}
+
+export async function updateGaleriaItem(
+  id: string,
+  updates: Partial<Omit<GaleriaItem, "id">>
+): Promise<GaleriaItem | null> {
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const dbUpdates: Record<string, unknown> = {};
+      if (updates.titulo !== undefined) dbUpdates.titulo = updates.titulo;
+      if (updates.descricao !== undefined) dbUpdates.descricao = updates.descricao;
+      if (updates.imagemUrl !== undefined) dbUpdates.imagem_url = updates.imagemUrl;
+      if (updates.categoria !== undefined) dbUpdates.categoria = updates.categoria;
+      if (updates.data !== undefined) dbUpdates.data = updates.data;
+
+      await supabase.from("galeria").update(dbUpdates).eq("id", id);
+    } catch (e) {
+      console.error("Supabase update galeria error:", e);
+    }
+  }
+
+  const current = await getGaleria();
+  const index = current.findIndex((g) => g.id === id);
+  if (index === -1) return null;
+
+  const updatedItem: GaleriaItem = { ...current[index], ...updates };
+  const updatedList = current.map((g) => (g.id === id ? updatedItem : g));
+  setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(updatedList));
+  return updatedItem;
 }
