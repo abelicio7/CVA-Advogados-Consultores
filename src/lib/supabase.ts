@@ -17,6 +17,7 @@ export interface Publicacao {
   conteudo: string;
   categoria: string; // 'Legislacao' | 'Artigo' | 'Boletim' | 'Aviso'
   pdfUrl?: string;
+  imagemUrl?: string;
   data: string;
   criadoEm?: string;
 }
@@ -98,6 +99,19 @@ function setStoredLocalData(key: string, value: string): void {
   }
 }
 
+// Helper to sort publications with newest date and newest creation time first
+export function sortPublicacoesDesc(items: Publicacao[]): Publicacao[] {
+  return [...items].sort((a, b) => {
+    const timeA = new Date(a.data).getTime() || 0;
+    const timeB = new Date(b.data).getTime() || 0;
+    if (timeB !== timeA) return timeB - timeA;
+    const createdA = a.criadoEm ? new Date(a.criadoEm).getTime() : 0;
+    const createdB = b.criadoEm ? new Date(b.criadoEm).getTime() : 0;
+    if (createdB !== createdA) return createdB - createdA;
+    return b.id.localeCompare(a.id);
+  });
+}
+
 // Helper functions for Publicações
 export async function getPublicacoes(): Promise<Publicacao[]> {
   if (isSupabaseConfigured && supabase) {
@@ -107,16 +121,18 @@ export async function getPublicacoes(): Promise<Publicacao[]> {
         .select("*")
         .order("data", { ascending: false });
       if (!error && data && data.length > 0) {
-        return data.map((item) => ({
+        const mapped = data.map((item) => ({
           id: item.id,
           titulo: item.titulo,
           resumo: item.resumo,
           conteudo: item.conteudo,
           categoria: item.categoria,
           pdfUrl: item.pdf_url,
+          imagemUrl: item.imagem_url || item.imagemUrl || undefined,
           data: item.data,
           criadoEm: item.created_at,
         }));
+        return sortPublicacoesDesc(mapped);
       }
     } catch (e) {
       console.warn("Supabase fetch error, falling back to local store:", e);
@@ -126,13 +142,14 @@ export async function getPublicacoes(): Promise<Publicacao[]> {
   const stored = getStoredLocalData(LOCAL_STORAGE_PUB_KEY);
   if (stored) {
     try {
-      return JSON.parse(stored);
+      const parsed: Publicacao[] = JSON.parse(stored);
+      return sortPublicacoesDesc(parsed);
     } catch (e) {
       console.error(e);
     }
   }
   setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(INITIAL_PUBLICACOES));
-  return INITIAL_PUBLICACOES;
+  return sortPublicacoesDesc(INITIAL_PUBLICACOES);
 }
 
 export async function addPublicacao(pub: Omit<Publicacao, "id">): Promise<Publicacao> {
@@ -153,6 +170,7 @@ export async function addPublicacao(pub: Omit<Publicacao, "id">): Promise<Public
             conteudo: pub.conteudo,
             categoria: pub.categoria,
             pdf_url: pub.pdfUrl || null,
+            imagem_url: pub.imagemUrl || null,
             data: pub.data,
           },
         ])
@@ -167,7 +185,7 @@ export async function addPublicacao(pub: Omit<Publicacao, "id">): Promise<Public
   }
 
   const current = await getPublicacoes();
-  const updated = [newPub, ...current];
+  const updated = sortPublicacoesDesc([newPub, ...current.filter((p) => p.id !== newPub.id)]);
   setStoredLocalData(LOCAL_STORAGE_PUB_KEY, JSON.stringify(updated));
   return newPub;
 }

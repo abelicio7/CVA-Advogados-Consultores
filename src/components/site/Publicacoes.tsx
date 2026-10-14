@@ -24,14 +24,24 @@ export function Publicacoes() {
 
   const categorias = ["Todas", "Legislação", "Artigo", "Boletim", "Aviso"];
 
-  const publicacoesFiltradas = publicacoes.filter((pub) => {
-    const matchesCategoria = categoriaAtiva === "Todas" || pub.categoria === categoriaAtiva;
-    const matchesPesquisa =
-      pub.titulo.toLowerCase().includes(pesquisa.toLowerCase()) ||
-      pub.resumo.toLowerCase().includes(pesquisa.toLowerCase()) ||
-      pub.conteudo.toLowerCase().includes(pesquisa.toLowerCase());
-    return matchesCategoria && matchesPesquisa;
-  });
+  const publicacoesFiltradas = publicacoes
+    .filter((pub) => {
+      const matchesCategoria = categoriaAtiva === "Todas" || pub.categoria === categoriaAtiva;
+      const matchesPesquisa =
+        pub.titulo.toLowerCase().includes(pesquisa.toLowerCase()) ||
+        pub.resumo.toLowerCase().includes(pesquisa.toLowerCase()) ||
+        pub.conteudo.toLowerCase().includes(pesquisa.toLowerCase());
+      return matchesCategoria && matchesPesquisa;
+    })
+    .sort((a, b) => {
+      const timeA = new Date(a.data).getTime() || 0;
+      const timeB = new Date(b.data).getTime() || 0;
+      if (timeB !== timeA) return timeB - timeA;
+      const createdA = a.criadoEm ? new Date(a.criadoEm).getTime() : 0;
+      const createdB = b.criadoEm ? new Date(b.criadoEm).getTime() : 0;
+      if (createdB !== createdA) return createdB - createdA;
+      return b.id.localeCompare(a.id);
+    });
 
   return (
     <section id="publicacoes" className="scroll-mt-24 py-24 lg:py-36 bg-muted/30">
@@ -99,6 +109,17 @@ export function Publicacoes() {
                 as="article"
                 className="flex flex-col overflow-hidden border border-hairline bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-md"
               >
+                {pub.imagemUrl ? (
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted border-b border-hairline">
+                    <img
+                      src={pub.imagemUrl}
+                      alt={pub.titulo}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                ) : null}
+
                 <div className="flex flex-1 flex-col p-7">
                   <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground">
                     <span className="inline-flex items-center rounded-xs bg-primary/10 px-2.5 py-1 text-[0.75rem] font-semibold text-primary">
@@ -168,6 +189,16 @@ export function Publicacoes() {
             </h3>
 
             <p className="mt-2 text-xs font-mono text-muted-foreground">Data de publicação: {selectedPub.data}</p>
+
+            {selectedPub.imagemUrl && (
+              <div className="mt-4 overflow-hidden rounded-md border border-hairline max-h-72">
+                <img
+                  src={selectedPub.imagemUrl}
+                  alt={selectedPub.titulo}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
 
             <div className="mt-6 border-t border-hairline pt-6 text-sm leading-relaxed text-muted-foreground space-y-4">
               <p className="font-medium text-foreground">{selectedPub.resumo}</p>

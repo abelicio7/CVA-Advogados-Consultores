@@ -44,6 +44,8 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
   const [pubConteudo, setPubConteudo] = useState("");
   const [pubPdfFile, setPubPdfFile] = useState<File | null>(null);
   const [pubPdfUrl, setPubPdfUrl] = useState("");
+  const [pubImgFile, setPubImgFile] = useState<File | null>(null);
+  const [pubImgUrl, setPubImgUrl] = useState("");
   const [pubData, setPubData] = useState(new Date().toISOString().split("T")[0]);
 
   // Form Galeria
@@ -110,12 +112,18 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
         finalPdfUrl = await handleFileRead(pubPdfFile);
       }
 
+      let finalImgUrl = pubImgUrl;
+      if (pubImgFile) {
+        finalImgUrl = await handleFileRead(pubImgFile);
+      }
+
       await addPublicacao({
         titulo: pubTitulo,
         categoria: pubCategoria,
         resumo: pubResumo,
         conteudo: pubConteudo || pubResumo,
-        pdfUrl: finalPdfUrl,
+        pdfUrl: finalPdfUrl || undefined,
+        imagemUrl: finalImgUrl || undefined,
         data: pubData,
       });
 
@@ -125,6 +133,8 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
       setPubConteudo("");
       setPubPdfFile(null);
       setPubPdfUrl("");
+      setPubImgFile(null);
+      setPubImgUrl("");
       await loadExistingItems();
       if (onSuccess) onSuccess();
     } catch (err) {
@@ -415,6 +425,33 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
                       placeholder="https://exemplo.com/documento.pdf"
                       value={pubPdfUrl}
                       onChange={(e) => setPubPdfUrl(e.target.value)}
+                      className="w-full rounded-md border border-hairline bg-card px-3.5 py-2 text-sm text-foreground focus:border-primary focus:outline-hidden"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-medium text-foreground mb-1">
+                      Fotografia de Capa (Opcional — se não enviar foto, a publicação exibe apenas texto)
+                    </label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => setPubImgFile(e.target.files?.[0] || null)}
+                      className="w-full rounded-md border border-hairline bg-card px-3 py-1.5 text-xs text-muted-foreground file:mr-3 file:rounded-xs file:border-0 file:bg-primary/10 file:px-2.5 file:py-1 file:text-xs file:font-semibold file:text-primary"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-medium text-foreground mb-1">
+                      Ou URL da Imagem Ilustrativa
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="https://exemplo.com/imagem.jpg"
+                      value={pubImgUrl}
+                      onChange={(e) => setPubImgUrl(e.target.value)}
                       className="w-full rounded-md border border-hairline bg-card px-3.5 py-2 text-sm text-foreground focus:border-primary focus:outline-hidden"
                     />
                   </div>
