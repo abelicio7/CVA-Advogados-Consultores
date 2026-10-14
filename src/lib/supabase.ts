@@ -57,27 +57,27 @@ export const INITIAL_PUBLICACOES: Publicacao[] = [
 export const INITIAL_GALERIA: GaleriaItem[] = [
   {
     id: "gal-1",
-    titulo: "Sede CVA Business Centre — Lichinga",
-    descricao: "Instalações modernas preparadas para atendimento ao cliente com total privacidade e conforto.",
+    titulo: "Equipa CVA Advogados & Consultores",
+    descricao: "Fotografia institucional conjunta da equipa jurídica do escritório.",
     imagemUrl: "/equipa/equipa-cva.jpg",
-    categoria: "Instalações",
-    data: "2026",
-  },
-  {
-    id: "gal-2",
-    titulo: "Reunião Anual da Equipa de Advogados",
-    descricao: "Sessão estratégica e de planeamento das atividades nos escritórios de Lichinga, Tete e Maputo.",
-    imagemUrl: "/equipa/jose-cipriano.jpg",
     categoria: "Equipa",
     data: "2026",
   },
   {
+    id: "gal-2",
+    titulo: "Instalações e Gabinetes de Atendimento",
+    descricao: "Espaços concebidos para reuniões confidenciais e assessoria jurídica de elevado padrão.",
+    imagemUrl: "/office-detail.jpg",
+    categoria: "Instalações",
+    data: "2026",
+  },
+  {
     id: "gal-3",
-    titulo: "Participação em Fórum Jurídico da OAM",
-    descricao: "Membros da firme presentes no debate sobre ética e prerrogativas da advocacia em Moçambique.",
-    imagemUrl: "/equipa/celso-diogo.jpg",
-    categoria: "Eventos",
-    data: "2025",
+    titulo: "Sede CVA Business Centre",
+    descricao: "Estrutura corporativa contemporânea onde se coordenam as operações e sucursais.",
+    imagemUrl: "/hero-architecture.jpg",
+    categoria: "Instalações",
+    data: "2026",
   },
 ];
 
@@ -218,10 +218,18 @@ export async function getGaleria(): Promise<GaleriaItem[]> {
     }
   }
 
+  const partnerPhotos = ["jose-cipriano", "celso-diogo", "elisio-dauce", "elisio-saude", "delton-fevereiro"];
+  const isPartnerPhoto = (url: string) => partnerPhotos.some((name) => url.includes(name));
+
   const stored = getStoredLocalData(LOCAL_STORAGE_GAL_KEY);
   if (stored) {
     try {
-      return JSON.parse(stored);
+      const parsed: GaleriaItem[] = JSON.parse(stored);
+      const cleaned = parsed.filter((item) => !isPartnerPhoto(item.imagemUrl));
+      if (cleaned.length !== parsed.length) {
+        setStoredLocalData(LOCAL_STORAGE_GAL_KEY, JSON.stringify(cleaned));
+      }
+      return cleaned.length > 0 ? cleaned : INITIAL_GALERIA;
     } catch (e) {
       console.error(e);
     }
