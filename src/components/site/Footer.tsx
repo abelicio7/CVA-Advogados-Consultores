@@ -1,3 +1,5 @@
+import { EMAIL, NAV_ITEMS } from "@/data/site";
+
 interface FooterProps {
   onOpenAdmin?: () => void;
 }
