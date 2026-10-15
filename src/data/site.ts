@@ -252,9 +252,9 @@ export const ASSOCIADOS: Associado[] = [
     foto: "/equipa/delton-fevereiro.jpg",
     carteira: "Carteira profissional n.º 3239",
   },
-  { nome: "Áurio Agnaldo Gilberto Cochelane", carteira: "Carteira profissional n.º 3215" },
-  { nome: "João Bilai Tambo Júnior", carteira: "Carteira profissional n.º 3619" },
-  { nome: "Alfredo Chicuele", foto: "/equipa/alfredo-chicuele.jpg", carteira: "Recém-inscrito, ainda sem número de carteira atribuído" },
+  { nome: "João Bilai Tambo Júnior", cargo: "Advogado Associado", carteira: "Carteira profissional n.º 3619" },
+  { nome: "Alfredo Chicuele", cargo: "Advogado Associado", foto: "/equipa/alfredo-chicuele.jpg", carteira: "Recém-inscrito, ainda sem número de carteira atribuído" },
+  { nome: "Amós Magalhães", cargo: "Contabilista", foto: "/equipa/amos-magalhaes.jpg", carteira: "" },
 ];
 
 export type Local = {
