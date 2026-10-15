@@ -73,13 +73,12 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Default admin pin for demo & authorization (e.g. cva2026 or admin)
-    if (pin.trim() === "cva2026" || pin.trim() === "admin") {
+    if (pin.trim() === "CVA2012@") {
       setIsAuthenticated(true);
       setAuthError("");
       loadExistingItems();
     } else {
-      setAuthError("Código de acesso incorreto. Tente 'cva2026'.");
+      setAuthError("Código de acesso incorreto.");
     }
   };
 
@@ -234,7 +233,7 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
                 <KeyRound className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <input
                   type="password"
-                  placeholder="Código de acesso (ex: cva2026)"
+                  placeholder="Código de acesso"
                   value={pin}
                   onChange={(e) => setPin(e.target.value)}
                   className="w-full rounded-md border border-hairline bg-card pl-10 pr-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-hidden"
