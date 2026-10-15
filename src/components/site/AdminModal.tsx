@@ -268,14 +268,7 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
               </button>
             </div>
 
-            {!isSupabaseConfigured && (
-              <div className="mt-4 flex items-start gap-3 rounded-md border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-600 dark:text-amber-400">
-                <Database className="h-4 w-4 shrink-0 mt-0.5" />
-                <div>
-                  <strong>Modo de Armazenamento Local Ativo:</strong> As publicações e fotos são guardadas instantaneamente no browser. Para sincronização permanente em nuvem com múltiplos utilizadores, configure as chaves do Supabase.
-                </div>
-              </div>
-            )}
+
 
             {/* Separadores / Tabs */}
             <div className="mt-6 flex border-b border-hairline">
