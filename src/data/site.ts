@@ -254,7 +254,7 @@ export const ASSOCIADOS: Associado[] = [
   },
   { nome: "Áurio Agnaldo Gilberto Cochelane", carteira: "Carteira profissional n.º 3215" },
   { nome: "João Bilai Tambo Júnior", carteira: "Carteira profissional n.º 3619" },
-  { nome: "Alfredo Chicuele", carteira: "Recém-inscrito, ainda sem número de carteira atribuído" },
+  { nome: "Alfredo Chicuele", foto: "/equipa/alfredo-chicuele.jpg", carteira: "Recém-inscrito, ainda sem número de carteira atribuído" },
 ];
 
 export type Local = {
