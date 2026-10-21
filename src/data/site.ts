@@ -40,7 +40,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Representação Judicial",
     resumo: "Patrocínio em processos judiciais e diligências legais.",
     detalhes: [
-      "Representação de clientes em processos judiciais e diligências legais, nos casos em que a atuação do escritório seja devidamente mandatada.",
+      "Patrocinio em processos comerciais, civeis, laboaris, ambientais e criminais",
     ],
   },
   {
@@ -79,21 +79,7 @@ export const SERVICOS: Servico[] = [
       "Outros órgãos administrativos",
     ],
   },
-  {
-    id: "documentacao",
-    titulo: "Documentação Jurídica",
-    resumo: "Redação de peças e comunicações de natureza jurídica.",
-    detalhes: [
-      "Cartas",
-      "Notificações",
-      "Requerimentos",
-      "Respostas",
-      "Reclamações",
-      "Exposições",
-      "Comunicações institucionais",
-      "Outros instrumentos jurídicos necessários",
-    ],
-  },
+
   {
     id: "regulamentacao",
     titulo: "Regulamentação Interna",
@@ -106,22 +92,7 @@ export const SERVICOS: Servico[] = [
       "Procedimentos laborais",
     ],
   },
-  {
-    id: "pareceres",
-    titulo: "Pareceres Jurídicos",
-    resumo: "Pareceres escritos fundamentados na legislação moçambicana.",
-    detalhes: [
-      "Emissão de pareceres jurídicos escritos com base na legislação moçambicana aplicável e, quando necessário, na jurisprudência e doutrina pertinente.",
-    ],
-  },
-  {
-    id: "analise-contratual",
-    titulo: "Análise Contratual",
-    resumo: "Interpretação de cláusulas e respetivas implicações jurídicas.",
-    detalhes: [
-      "Análise e interpretação de documentos legais, cláusulas contratuais e respetivas implicações jurídicas.",
-    ],
-  },
+
   {
     id: "reunioes",
     titulo: "Apoio a Reuniões e Sessões de Trabalho",
@@ -140,14 +111,7 @@ export const SERVICOS: Servico[] = [
       "Representação em audiências internas",
     ],
   },
-  {
-    id: "assessoria",
-    titulo: "Assessoria Jurídica Permanente",
-    resumo: "Acompanhamento jurídico geral e continuado.",
-    detalhes: [
-      "Prestação de assessoria jurídica geral e permanente, incluindo esclarecimento de dúvidas jurídicas pontuais.",
-    ],
-  },
+
   {
     id: "due-diligence",
     titulo: "Due Diligence",
