@@ -161,7 +161,7 @@ export type Socio = {
 export const SOCIOS: Socio[] = [
   {
     nome: "Dr. Elísio Verniz Dauce",
-    cargo: "Sócio e Administrador do Escritório de Lichinga",
+    cargo: "Advogado e Sócio Administrador da Sucursal de Lichinga",
     foto: "/equipa/elisio-dauce.jpg",
     iniciais: "ED",
     carteira: "n.º 2116",
@@ -169,7 +169,7 @@ export const SOCIOS: Socio[] = [
       "Advogado com 6 anos de experiência.",
       "Árbitro.",
       "Vice-Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
-      "Presidiu o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
+      "Coordenou o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
     ],
   },
   {
@@ -186,7 +186,7 @@ export const SOCIOS: Socio[] = [
   },
   {
     nome: "Dr. José Tambara João Cipriano",
-    cargo: "Sócio e Administrador da Sucursal de Tete",
+    cargo: "Advogado e Sócio Administrador da Sucursal de Tete",
     foto: "/equipa/jose-cipriano.jpg",
     iniciais: "JC",
     carteira: "n.º 1782",
@@ -194,8 +194,8 @@ export const SOCIOS: Socio[] = [
       "Advogado com 9 anos de experiência.",
       "Árbitro.",
       "Vice-Presidente do Conselho Provincial da OAM – Tete.",
-      "Presidiu o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado no Conselho Provincial da OAM – Tete de 2023 a 2026.",
-      "Presidiu o pelouro do combate à procuradoria ilícita no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
+      "Coordenou o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado no Conselho Provincial da OAM – Tete de 2023 a 2026.",
+      "Coordenou o pelouro do combate à procuradoria ilícita no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
     ],
   },
 ];
