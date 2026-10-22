@@ -1,0 +1,21 @@
+{
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": ".output/public",
+  "framework": null,
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "functions": {
+    ".output/server/**/*.mjs": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/.output/server/index.mjs"
+    }
+  ],
+  "env": {
+    "NITRO_PRESET": "vercel"
+  }
+}
