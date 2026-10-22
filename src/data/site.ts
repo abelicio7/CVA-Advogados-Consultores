@@ -160,16 +160,27 @@ export type Socio = {
 
 export const SOCIOS: Socio[] = [
   {
-    nome: "Dr. Celso Diogo Mendonça",
-    cargo: "Advogado e Árbitro",
+    nome: "Dr. Elísio Verniz Dauce",
+    cargo: "Sócio e Administrador do Escritório de Lichinga",
+    foto: "/equipa/elisio-dauce.jpg",
+    iniciais: "ED",
+    carteira: "n.º 2116",
+    pontos: [
+      "Advogado com 6 anos de experiência.",
+      "Árbitro.",
+      "Vice-Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
+      "Presidiu o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
+    ],
+  },
+  {
+    nome: "Dr. Celso Mendonça Diogo",
+    cargo: "Advogado e Sócio Fundador",
     foto: "/equipa/celso-diogo.jpg",
     iniciais: "CM",
     carteira: "n.º 736",
     pontos: [
       "Advogado com mais de 15 anos de experiência.",
       "Árbitro.",
-      "Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
-      "Presidiu o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado do Conselho Provincial da OAM – Niassa de 2020 a 2023.",
       "Fluente em Português e Inglês.",
     ],
   },
@@ -185,19 +196,6 @@ export const SOCIOS: Socio[] = [
       "Vice-Presidente do Conselho Provincial da OAM – Tete.",
       "Presidiu o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado no Conselho Provincial da OAM – Tete de 2023 a 2026.",
       "Presidiu o pelouro do combate à procuradoria ilícita no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
-    ],
-  },
-  {
-    nome: "Dr. Elísio Verniz Dauce",
-    cargo: "Sócio e Administrador do Escritório de Lichinga",
-    foto: "/equipa/elisio-dauce.jpg",
-    iniciais: "ED",
-    carteira: "n.º 2116",
-    pontos: [
-      "Advogado com 6 anos de experiência.",
-      "Árbitro.",
-      "Vice-Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
-      "Presidiu o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
     ],
   },
 ];
