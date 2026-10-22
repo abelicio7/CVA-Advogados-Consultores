@@ -43,6 +43,7 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
   // Form Publicação
   const [pubTitulo, setPubTitulo] = useState("");
   const [pubCategoria, setPubCategoria] = useState("Legislação");
+  const [pubSubcategoria, setPubSubcategoria] = useState("Penal");
   const [pubResumo, setPubResumo] = useState("");
   const [pubConteudo, setPubConteudo] = useState("");
   const [pubPdfFile, setPubPdfFile] = useState<File | null>(null);
@@ -119,9 +120,12 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
         finalImgUrl = await handleFileRead(pubImgFile);
       }
 
+      const categoriaFinal =
+        pubCategoria === "Legislação" ? `Legislação – ${pubSubcategoria}` : pubCategoria;
+
       await addPublicacao({
         titulo: pubTitulo,
-        categoria: pubCategoria,
+        categoria: categoriaFinal,
         resumo: pubResumo,
         conteudo: pubConteudo || pubResumo,
         pdfUrl: finalPdfUrl || undefined,
@@ -363,13 +367,39 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
                       onChange={(e) => setPubCategoria(e.target.value)}
                       className="w-full rounded-md border border-hairline bg-card px-3.5 py-2 text-sm text-foreground focus:border-primary focus:outline-hidden"
                     >
-                      <option value="Legislação">Legislação & Decretos</option>
+                      <option value="Legislação">Legislação &amp; Decretos</option>
                       <option value="Artigo">Artigo Jurídico</option>
                       <option value="Boletim">Boletim Informativo</option>
                       <option value="Aviso">Aviso Institucional</option>
                     </select>
                   </div>
                 </div>
+
+                {pubCategoria === "Legislação" && (
+                  <div>
+                    <label className="block text-xs font-medium text-foreground mb-1">
+                      Subcategoria de Legislação *
+                    </label>
+                    <select
+                      value={pubSubcategoria}
+                      onChange={(e) => setPubSubcategoria(e.target.value)}
+                      className="w-full rounded-md border border-hairline bg-card px-3.5 py-2 text-sm text-foreground focus:border-primary focus:outline-hidden"
+                    >
+                      <option value="Penal">Penal</option>
+                      <option value="Laboral">Laboral</option>
+                      <option value="Comercial">Comercial</option>
+                      <option value="Ambiente">Ambiente</option>
+                      <option value="Administrativo">Administrativo</option>
+                      <option value="Fiscal">Fiscal</option>
+                      <option value="Aduaneiro">Aduaneiro</option>
+                      <option value="Minas">Minas</option>
+                      <option value="Terra">Terra</option>
+                      <option value="Petróleo">Petróleo</option>
+                      <option value="Migração">Migração</option>
+                      <option value="Ordem dos Advogados de Moçambique">Ordem dos Advogados de Moçambique</option>
+                    </select>
+                  </div>
+                )}
 
                 <div>
                   <label className="block text-xs font-medium text-foreground mb-1">
