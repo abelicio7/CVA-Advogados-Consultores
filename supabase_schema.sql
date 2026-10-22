@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS public.publicacoes (
   resumo TEXT NOT NULL,
   conteudo TEXT,
   pdf_url TEXT,
+  imagem_url TEXT,
   data DATE DEFAULT CURRENT_DATE,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
