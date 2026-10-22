@@ -215,7 +215,17 @@ export const ASSOCIADOS: Associado[] = [
     carteira: "Carteira profissional n.º 3239",
   },
   { nome: "João Bilai Tambo Júnior", cargo: "Advogado Associado", foto: "/equipa/joao-bilai.jpg", carteira: "Carteira profissional n.º 3619" },
-  { nome: "Alfredo Chicuele", cargo: "Advogado Associado", foto: "/equipa/alfredo-chicuele.jpg", carteira: "Recém-inscrito, ainda sem número de carteira atribuído" },
+  { nome: "Alfredo Chicuele", cargo: "Advogado Associado", foto: "/equipa/alfredo-chicuele.jpg", carteira: "" },
+];
+
+export type Contabilista = {
+  nome: string;
+  cargo: string;
+  foto?: string;
+  carteira?: string;
+};
+
+export const CONTABILISTAS: Contabilista[] = [
   { nome: "Amós Magalhães", cargo: "Contabilista", foto: "/equipa/amos-magalhaes.jpg", carteira: "" },
 ];
 
@@ -254,6 +264,7 @@ export const LOCAIS: Local[] = [
     cidade: "Maputo",
     tipo: "Sucursal",
     morada: "Bairro da Sommerschield, Edifício 41 Business Centre",
+    telefone: "+258 875005001",
     x: 40,
     y: 90,
   },

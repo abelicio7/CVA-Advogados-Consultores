@@ -1,4 +1,4 @@
-import { ASSOCIADOS, SOCIOS } from "@/data/site";
+import { ASSOCIADOS, CONTABILISTAS, SOCIOS } from "@/data/site";
 import { Reveal } from "./Reveal";
 
 export function Equipa() {
@@ -76,6 +76,37 @@ export function Equipa() {
                   <p className="font-display text-lg leading-snug text-foreground">{a.nome}</p>
                   {a.cargo ? <p className="eyebrow mt-1.5 text-primary">{a.cargo}</p> : null}
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{a.carteira}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* Contabilistas */}
+        <Reveal className="mt-20">
+          <h3 className="font-display text-2xl text-foreground sm:text-3xl">
+            Contabilistas
+          </h3>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {CONTABILISTAS.map((c) => (
+              <div
+                key={c.nome}
+                className="flex flex-col overflow-hidden border border-hairline bg-card"
+              >
+                {c.foto ? (
+                  <div className="relative aspect-[4/4.2] w-full overflow-hidden bg-muted">
+                    <img
+                      src={c.foto}
+                      alt={c.nome}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top"
+                    />
+                  </div>
+                ) : null}
+                <div className="p-6">
+                  <p className="font-display text-lg leading-snug text-foreground">{c.nome}</p>
+                  {c.cargo ? <p className="eyebrow mt-1.5 text-primary">{c.cargo}</p> : null}
+                  {c.carteira ? <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{c.carteira}</p> : null}
                 </div>
               </div>
             ))}
