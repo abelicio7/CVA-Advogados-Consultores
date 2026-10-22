@@ -23,7 +23,7 @@ export function Contacto() {
           {/* Canais Principais */}
           <Reveal className="flex flex-col justify-between border border-hairline bg-card p-8 lg:col-span-5 lg:p-10">
             <div>
-              <h3 className="font-display text-2xl text-foreground">Canais Diretos</h3>
+              <h3 className="font-display text-2xl text-foreground">Canais Directos</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Entre em contacto com a nossa equipa através de correio eletrónico ou chamada telefónica.
               </p>
