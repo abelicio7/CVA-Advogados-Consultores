@@ -22,7 +22,7 @@ export function Hero() {
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-ink-foreground/65">Advocacia · Moçambique · Desde 2012</p>
           <h1 className="mt-6 font-display text-4xl leading-[1.08] text-ink-foreground sm:text-5xl lg:text-[4.25rem]">
-            Excelência jurídica para decisões que exigem confiança.
+            Conhecimento jurídico. Estratégia. Resultados.
           </h1>
           <div className="mt-8 h-px w-24 bg-primary" />
           <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
