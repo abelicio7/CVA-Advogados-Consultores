@@ -160,19 +160,6 @@ export type Socio = {
 
 export const SOCIOS: Socio[] = [
   {
-    nome: "Dr. Elísio Verniz Dauce",
-    cargo: "Advogado e Sócio Administrador da Sucursal de Lichinga",
-    foto: "/equipa/elisio-dauce.jpg",
-    iniciais: "ED",
-    carteira: "n.º 2116",
-    pontos: [
-      "Advogado com 6 anos de experiência.",
-      "Árbitro.",
-      "Vice-Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
-      "Coordenou o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
-    ],
-  },
-  {
     nome: "Dr. Celso Mendonça Diogo",
     cargo: "Advogado e Sócio Fundador",
     foto: "/equipa/celso-diogo.jpg",
@@ -196,6 +183,19 @@ export const SOCIOS: Socio[] = [
       "Vice-Presidente do Conselho Provincial da OAM – Tete.",
       "Coordenou o pelouro da defesa da dignidade e reforço das prerrogativas do Advogado no Conselho Provincial da OAM – Tete de 2023 a 2026.",
       "Coordenou o pelouro do combate à procuradoria ilícita no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
+    ],
+  },
+  {
+    nome: "Dr. Elísio Verniz Dauce",
+    cargo: "Advogado e Sócio Administrador da Sucursal de Lichinga",
+    foto: "/equipa/elisio-dauce.jpg",
+    iniciais: "ED",
+    carteira: "n.º 2116",
+    pontos: [
+      "Advogado com 6 anos de experiência.",
+      "Árbitro.",
+      "Vice-Presidente do Conselho Provincial da OAM – Niassa de 2023 a 2026.",
+      "Coordenou o pelouro da administração e finanças no Conselho Provincial da OAM – Niassa de 2020 a 2023.",
     ],
   },
 ];
