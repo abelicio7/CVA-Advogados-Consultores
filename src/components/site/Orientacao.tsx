@@ -13,7 +13,7 @@ export function Orientacao() {
             id="orientacao-titulo"
             className="mt-5 max-w-2xl font-display text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]"
           >
-            O que orienta a nossa atuação
+            O que orienta a nossa actuação
           </h2>
         </Reveal>
 

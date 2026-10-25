@@ -47,9 +47,9 @@ export function Publicacoes() {
     <section id="publicacoes" className="scroll-mt-24 py-24 lg:py-36 bg-muted/30">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow">Publicações & Atualizações</p>
+          <p className="eyebrow">Publicações & Actualizações</p>
           <h2 className="mt-5 font-display text-3xl leading-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
-            Atualizações de Leis, Pareceres & Artigos
+            Actualizações de Leis, Pareceres & Artigos
           </h2>
           <p className="mt-6 text-[0.975rem] leading-relaxed text-muted-foreground">
             Acompanhe a evolução do panorama legislativo em Moçambique através das nossas publicações, pareceres e boletins informativos.
@@ -99,7 +99,7 @@ export function Publicacoes() {
           <div className="mt-12 text-center py-16 border border-dashed border-hairline rounded-lg bg-card/50">
             <FileText className="mx-auto h-10 w-10 text-muted-foreground/60" />
             <p className="mt-4 text-sm font-medium text-foreground">Nenhuma publicação encontrada</p>
-            <p className="mt-1 text-xs text-muted-foreground">Tente alterar o termo de pesquisa ou filtro selecionado.</p>
+            <p className="mt-1 text-xs text-muted-foreground">Tente alterar o termo de pesquisa ou filtro seleccionado.</p>
           </div>
         ) : (
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

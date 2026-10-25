@@ -28,7 +28,7 @@ export function Sobre() {
               qualidade técnica, exclusividade, organização, transparência e ética.
             </p>
             <p>
-              Mantemos uma atualização constante e exigência técnica permanente, oferecendo apoio
+              Mantemos uma actualização constante e exigência técnica permanente, oferecendo apoio
               abrangente, assessoria eficaz e suporte jurídico em diversas áreas do Direito.
             </p>
           </div>

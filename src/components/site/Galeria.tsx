@@ -70,7 +70,7 @@ export function Galeria() {
           <div className="mt-12 text-center py-16 border border-dashed border-hairline rounded-lg bg-card/50">
             <Camera className="mx-auto h-10 w-10 text-muted-foreground/60" />
             <p className="mt-4 text-sm font-medium text-foreground">Nenhuma foto encontrada</p>
-            <p className="mt-1 text-xs text-muted-foreground">Não existem fotografias para a categoria selecionada.</p>
+            <p className="mt-1 text-xs text-muted-foreground">Não existem fotografias para a categoria seleccionada.</p>
           </div>
         ) : (
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

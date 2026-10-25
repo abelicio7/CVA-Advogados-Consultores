@@ -83,7 +83,7 @@ export const SERVICOS: Servico[] = [
   {
     id: "regulamentacao",
     titulo: "Regulamentação Interna",
-    resumo: "Desenvolvimento e atualização de normativos internos.",
+    resumo: "Desenvolvimento e actualização de normativos internos.",
     detalhes: [
       "Códigos de Conduta",
       "Regulamentos Internos",
