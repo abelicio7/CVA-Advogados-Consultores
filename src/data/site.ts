@@ -55,8 +55,8 @@ export const SERVICOS: Servico[] = [
     ],
   },
   {
-    id: "migratorio",
-    titulo: "Direito Migratório",
+    id: "administrativo-migratorio",
+    titulo: "Direito Administrativo e Migratório",
     resumo: "Tramitação e acompanhamento de documentação de expatriados.",
     detalhes: [
       "Autorizações de trabalho",
