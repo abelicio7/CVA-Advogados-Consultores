@@ -33,7 +33,7 @@ export function Galeria() {
         <Reveal className="max-w-3xl">
           <p className="eyebrow">Galeria de Fotografias</p>
           <h2 className="mt-5 font-display text-3xl leading-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
-            A Nossa Presença & Atividade
+            A Nossa Presença & Actividade
           </h2>
           <p className="mt-6 text-[0.975rem] leading-relaxed text-muted-foreground">
             Explore a galeria visual do escritório CVA Advogados & Consultores — instalações, eventos institucionais e momentos da nossa equipa.

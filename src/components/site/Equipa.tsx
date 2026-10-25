@@ -82,10 +82,10 @@ export function Equipa() {
           </div>
         </Reveal>
 
-        {/* Contabilistas */}
+        {/* Administração e Finanças */}
         <Reveal className="mt-20">
           <h3 className="font-display text-2xl text-foreground sm:text-3xl">
-            Contabilistas
+            Administração e Finanças
           </h3>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CONTABILISTAS.map((c) => (

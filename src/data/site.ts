@@ -40,7 +40,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Representação Judicial",
     resumo: "Patrocínio em processos judiciais e diligências legais.",
     detalhes: [
-      "Patrocinio em processos comerciais, civeis, laboaris, ambientais e criminais",
+      "Patrocinio em processos comerciais, civeis, laborais, ambientais e criminais",
     ],
   },
   {
@@ -218,15 +218,15 @@ export const ASSOCIADOS: Associado[] = [
   { nome: "Alfredo Chicuele", cargo: "Advogado Associado", foto: "/equipa/alfredo-chicuele.jpg", carteira: "" },
 ];
 
-export type Contabilista = {
+export type AdministracaoFinancas = {
   nome: string;
   cargo: string;
   foto?: string;
   carteira?: string;
 };
 
-export const CONTABILISTAS: Contabilista[] = [
-  { nome: "Amós Magalhães", cargo: "Contabilista", foto: "/equipa/amos-magalhaes.jpg", carteira: "" },
+export const CONTABILISTAS: AdministracaoFinancas[] = [
+  { nome: "Amós Magalhães", cargo: "Director de Administração e Finanças", foto: "/equipa/amos-magalhaes.jpg", carteira: "" },
 ];
 
 export type Local = {
