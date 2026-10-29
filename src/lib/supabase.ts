@@ -59,23 +59,23 @@ export const INITIAL_GALERIA: GaleriaItem[] = [
   {
     id: "gal-1",
     titulo: "Sede CVA Business Centre — Lichinga",
-    descricao: "Instalações corporativas contemporâneas preparadas para atendimento ao cliente com total privacidade e conforto.",
-    imagemUrl: "/hero-architecture.jpg",
+    descricao: "Fachada principal das instalações corporativas do CVA Business Centre, na Rua do Aeroporto, Lichinga.",
+    imagemUrl: "/instalacoes-1.jpg",
     categoria: "Instalações",
     data: "2026",
   },
   {
     id: "gal-2",
-    titulo: "Instalações e Gabinetes de Atendimento",
-    descricao: "Espaços concebidos para reuniões confidenciais e assessoria jurídica de elevado padrão.",
-    imagemUrl: "/office-detail.jpg",
+    titulo: "Edifício CVA — Vista Panorâmica",
+    descricao: "Vista panorâmica do Edifício CVA Business Centre, sede da firma em Lichinga, com amplo espaço de estacionamento.",
+    imagemUrl: "/instalacoes-2.jpg",
     categoria: "Instalações",
     data: "2026",
   },
 ];
 
 const LOCAL_STORAGE_PUB_KEY = "cva_publicacoes_data";
-const LOCAL_STORAGE_GAL_KEY = "cva_galeria_data_v3";
+const LOCAL_STORAGE_GAL_KEY = "cva_galeria_data_v4";
 
 // SSR-safe localStorage helpers
 function getStoredLocalData(key: string): string | null {
