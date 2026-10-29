@@ -215,7 +215,7 @@ export const ASSOCIADOS: Associado[] = [
     carteira: "Carteira profissional n.º 3239",
   },
   { nome: "João Bilai Tambo Júnior", cargo: "Advogado Associado", foto: "/equipa/joao-bilai.jpg", carteira: "Carteira profissional n.º 3619" },
-  { nome: "Alfredo Chicuele", cargo: "Advogado Associado", foto: "/equipa/alfredo-chicuele.jpg", carteira: "" },
+  { nome: "Alfredo Chicuele", cargo: "Advogado Associado", foto: "/equipa/alfredo-chicuele.jpg", carteira: "Carteira profissional n.º 4201" },
 ];
 
 export type AdministracaoFinancas = {
