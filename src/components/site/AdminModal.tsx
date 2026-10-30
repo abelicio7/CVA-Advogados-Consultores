@@ -133,7 +133,7 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
         data: pubData,
       });
 
-      setMessage({ type: "success", text: "Atualização de Lei/Publicação criada com sucesso!" });
+      setMessage({ type: "success", text: "Actualização de Lei/Publicação criada com sucesso!" });
       setPubTitulo("");
       setPubResumo("");
       setPubConteudo("");
@@ -350,7 +350,7 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
                     </label>
                     <input
                       type="text"
-                      placeholder="Ex: Atualização do Código Comercial 2026"
+                      placeholder="Ex: Actualização do Código Comercial 2026"
                       value={pubTitulo}
                       onChange={(e) => setPubTitulo(e.target.value)}
                       className="w-full rounded-md border border-hairline bg-card px-3.5 py-2 text-sm text-foreground focus:border-primary focus:outline-hidden"
@@ -489,7 +489,7 @@ export function AdminModal({ isOpen, onClose, onSuccess }: AdminModalProps) {
                     className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-xs hover:opacity-90 disabled:opacity-50"
                   >
                     <Upload className="h-4 w-4" />
-                    {submitting ? "A publicar..." : "Publicar Atualização"}
+                    {submitting ? "A publicar..." : "Publicar Actualização"}
                   </button>
                 </div>
               </form>

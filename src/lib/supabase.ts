@@ -36,11 +36,11 @@ export interface GaleriaItem {
 export const INITIAL_PUBLICACOES: Publicacao[] = [
   {
     id: "pub-1",
-    titulo: "Atualização da Legislação Laboral e Implicações Práticas",
+    titulo: "Actualização da Legislação Laboral e Implicações Práticas",
     resumo:
       "Resumo dos principais pontos de alteração da Lei do Trabalho em Moçambique e recomendações para as empresas.",
     conteudo:
-      "A recente atualização da legislação laboral traz novos desafios para a gestão de recursos humanos e contratos de trabalho. Analisamos os prazos de aviso prévio, indemnizações e novas regras para trabalhadores expatriados.",
+      "A recente actualização da legislação laboral traz novos desafios para a gestão de recursos humanos e contratos de trabalho. Analisamos os prazos de aviso prévio, indemnizações e novas regras para trabalhadores expatriados.",
     categoria: "Legislação",
     data: "2026-02-15",
   },
