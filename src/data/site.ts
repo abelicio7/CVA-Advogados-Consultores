@@ -187,7 +187,7 @@ export const SOCIOS: Socio[] = [
   },
   {
     nome: "Dr. Elísio Verniz Dauce",
-    cargo: "Advogado e Sócio Administrador da Sucursal de Lichinga",
+    cargo: "Advogado e Sócio Administrador do Escritório de Lichinga",
     foto: "/equipa/elisio-dauce.jpg",
     iniciais: "ED",
     carteira: "n.º 2116",
